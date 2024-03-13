@@ -99,13 +99,13 @@ work_on_project_with_effort(X, Project) :-
 %-------------------------------------------------------------
 % Queries
 % Write your queries here .
-?- eligible_employee(_, computerization, 10, jennifer).
+?- eligible_employee(_Employee, computerization, 10, jennifer).
 
-?- employee_high_salary_and_research(_).
+?- employee_high_salary_and_research(_Employee).
 
-?- supreme_chief(_). %%I think this should be a variable since we want to know who the ceo is right? Not just that there is a ceo.
+?- supreme_chief(_Employee).
 
-?- work_on_project_with_effort(_, productx).
+?- work_on_project_with_effort(_Employee, productx).
 
 
 
