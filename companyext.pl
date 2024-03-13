@@ -103,7 +103,7 @@ work_on_project_with_effort(X, Project) :-
 
 ?- employee_high_salary_and_research(_).
 
-?- supreme_chief(_).
+?- supreme_chief(_). %%I think this should be a variable since we want to know who the ceo is right? Not just that there is a ceo.
 
 ?- work_on_project_with_effort(_, productx).
 
