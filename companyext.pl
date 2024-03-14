@@ -110,7 +110,7 @@ work_on_project_with_effort(X, Project, Min) :-
 
 ?- supreme_chief(_Employee).
 
-?- work_on_project_with_effort(_Employee, productx).
+?- work_on_project_with_effort(_Employee, productx, 20).
 
 
 
