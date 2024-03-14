@@ -75,10 +75,11 @@ superior(X,Y) :- supervise(X,Y).
 
 subordinate(X,Y) :- superior(Y,X).
 
-eligible_employee(X, Project, Effort, Y) :-
+eligible_employee(X, Project, EffortMin, Y) :-
     female(X),
     works_on(X, Project, Effort),
-    supervise(Y, X).
+    supervise(Y, X),
+    Effort >= EffortMin.
 
 employee_high_salary_and_research(X) :-
     employee(X),
@@ -90,22 +91,26 @@ supreme_chief(X) :-
     department(X, headquarters),
     \+ supervise(_, X).
 
-work_on_project_with_effort(X, Project) :-
+alternate_chief(X) :-
+    employee(X),
+    \+ supervise(_, X).
+
+work_on_project_with_effort(X, Project, Min) :-
     works_on(X, Project, Effort),
-    Effort >= 20.
+    Effort >= Min.
 
 % Should you need to write new rules, please enter them here.
 
 %-------------------------------------------------------------
 % Queries
 % Write your queries here .
-?- eligible_employee(_, computerization, 10, jennifer).
+?- eligible_employee(Name, computerization, 10, jennifer).
 
-?- employee_high_salary_and_research(_).
+?- employee_high_salary_and_research(Name).
 
-?- supreme_chief(_).
+?- supreme_chief(Name).
 
-?- work_on_project_with_effort(_, productx).
+?- work_on_project_with_effort(Name, productx, 20).
 
 
 
