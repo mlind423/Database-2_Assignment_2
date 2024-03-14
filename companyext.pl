@@ -104,13 +104,13 @@ work_on_project_with_effort(X, Project, Min) :-
 %-------------------------------------------------------------
 % Queries
 % Write your queries here .
-?- eligible_employee(Name, computerization, 10, jennifer).
+?- eligible_employee(_Employee, computerization, 10, jennifer).
 
-?- employee_high_salary_and_research(Name).
+?- employee_high_salary_and_research(_Employee).
 
-?- supreme_chief(Name).
+?- supreme_chief(_Employee).
 
-?- work_on_project_with_effort(Name, productx, 20).
+?- work_on_project_with_effort(_Employee, productx).
 
 
 
