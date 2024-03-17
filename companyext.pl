@@ -95,7 +95,12 @@ supreme_chief(X) :-
 
 work_on_project_with_effort(X, Project, Min) :-
     works_on(X, Project, Effort),
-    Effort >= Min.
+    Effort >= Min,
+    write(X), nl,
+    fail. % Fail here to force backtracking to pick up Joyce
+
+work_on_project_with_effort(_, _, _). % Base case to terminate recursion
+
 
 %-------------------------------------------------------------
 % Queries
@@ -107,8 +112,3 @@ work_on_project_with_effort(X, Project, Min) :-
 ?- supreme_chief(_Employee).
 
 ?- work_on_project_with_effort(_Employee, productx, 20).
-
-
-
-
-
